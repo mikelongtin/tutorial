@@ -1,0 +1,14 @@
+
+//- Nav Logged In
+//- ==================================================
+a.dropdown-button(data-activates='logout-dropdown', data-beloworigin='true')
+	= loggedIn.user.displayName
+	i.material-icons(class='right'): |arrow_drop_down
+
+//- Dropdown Structure
+ul#logout-dropdown.dropdown-content
+	li.submenu-item
+		a.btn-logout
+			i.material-icons(class='left'): |power_settings_new
+			|Log Out
+

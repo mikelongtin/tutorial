@@ -1,0 +1,53 @@
+
+//- Nav
+//- ==================================================
+.navbar-fixed
+	nav
+		.nav-wrapper
+
+			//- Logo
+			a.left(class='brand-logo')
+				|Incident
+				b: |DASHBOARD
+
+			//- Mobile Menu
+			a.right(data-activates='mobile-menu', class='button-collapse')
+				i.material-icons: |menu
+
+			//- Mobile Menu Dropdown
+			ul#mobile-menu.side-nav
+				li.menu-item(data-route='main')
+					a.btn-main: |Home
+				li.menu-item(style="display: none")
+					a.btn-reconnect
+						i.material-icons(class='left'): |signal_wifi_off
+						|Reconnect
+				li.menu-item(data-route='login')
+					if loggedIn
+						a.btn-logout: |Log Out
+					else
+						a.btn-login: |Log In
+
+			//- MainNav
+			ul.left(class='hide-on-med-and-down')
+				li.menu-item(data-route='main')
+					a.btn-main: |Home
+			ul.right(class='hide-on-med-and-down')
+				li.menu-item(style="display: none")
+					a.btn-reconnect
+						i.material-icons(class='left'): |signal_wifi_off
+						|Reconnect
+				li.menu-item(data-route='login')
+					if loggedIn
+						a.dropdown-button(data-activates='logout-dropdown', data-beloworigin='true')
+							= loggedIn.user.displayName
+							i.material-icons(class='right'): |arrow_drop_down
+					else
+						a.btn-login: |Log In
+
+			//- MainNav Dropdown
+			ul#logout-dropdown.dropdown-content
+				li.submenu-item
+					a.btn-logout
+						i.material-icons(class='left'): |power_settings_new
+						|Log Out

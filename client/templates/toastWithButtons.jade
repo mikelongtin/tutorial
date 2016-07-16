@@ -1,0 +1,7 @@
+
+//- Toast With Buttons
+h3.toast-title= title
+p.toast-info= info
+if (buttons !== undefined)
+	each button in buttons
+		a(role='button', data-id= button.id, class= button.class)= button.label

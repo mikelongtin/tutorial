@@ -1,0 +1,20 @@
+
+//- Login
+//-==================================================
+section.login
+	.row
+		.card(class=['col','s6','m4','l2','push-s3','push-m4','push-l5'])
+			.row
+				h3(class=['col','s12','center-align','light-blue-text','text-accent-2'])
+					|Log In
+			.row
+				.input-field(class=['col','s10','push-s1'])
+					input#user(type='text', required, autofocus)
+					label(for='user'): |UserName
+			.row
+				.input-field(class=['col','s10','push-s1'])
+					input#pass(type='password', required)
+					label(for='pass'): |Password
+			.row
+				p(class=['col','s10','push-s1'])
+					a.btn-submit(class=['waves-effect','wave-light','btn', 'col', 's12']): |Submit
